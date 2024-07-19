@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(97, 158, 228) ">
+
+    <h1 class="text-center text-light" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; background-color: rgb(5, 41, 125);">Form Validation</h1>
+
+   <div class="container mt-5 w-50" style="border: 2px solid white; background-color: rgb(183, 213, 235); border-radius: 20px; box-shadow: 0px 10px 20px 10px white;">
+     
+    <form  class="m-4" name="form" action="./message.html" method="post" onsubmit="return formv()">  
+        <div class="row m-2">
+            <div class="col-12 "> <label for="">First Name:</label></div>
+            <div class="col"> <input type="text" name="fname" class="form-control"  ></div>
+        </div>
+        <div class="row m-2">
+            <div class="col-12 "><label for="">Last Name:</label></div>
+            <div class="col"><input type="text" name="lname" class="form-control"></div>
+        </div>
+        <div class="row m-2">
+            <div class="col-12 "><label for="">City:</label></div>
+            <div class="col"> <input type="text" name="city" class="form-control"></div>
+        </div>
+        <div class="row m-2">
+            <div class="col-12 "> <label for="">Ph Number:</label></div>
+            <div class="col"> <input type="text" name="phnumber" class="form-control"></div>
+        </div>
+        <div class="row m-2">
+            <div class="col-12 "><label for="">Address:</label></div>
+            <div class="col"> <textarea name="address" id="" class="form-control" ></textarea>
+                <br></div>
+        </div>
+        <div class="row m-2  ">
+            <div class="col d-flex justify-content-center"> <button  class="bg-primary text-light ps-5 pe-5 form-control" style="border-radius: 20px; border: 1px solid green;">Submit</button></div>
+        </div>
+       
+    
+    </form>
+     
+   </div>
+    <script>
+
+        function formv(){
+            var fname = document.form.fname.value;
+            var lname = document.form.lname.value;
+            var city = document.form.city.value;
+            var phnumber = document.form.phnumber.value;
+            var address =document.form.address.value;
+            if(fname == null || fname == "" && lname == null ||lname == "" && city == null || city == ""  && phnumber == null || phnumber == "" && address == null || address == ""){
+            alert(" Fill the Detail Correctly");
+            return false;
+            }
+            else if( phnumber.length!=10 || phnumber =="" || phnumber ==null  ){
+            alert("Phnumber should be 10 ");
+            return false;
+            }
+            else{
+                alert("Successfully Submitted")
+            }
+        } 
+    </script>
+
+
+    
+</body>
+</html>
